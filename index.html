@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo de Notícias com LLM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4 min-h-screen">
+
+    <main class="w-full max-w-4xl bg-white p-8 rounded-2xl shadow-xl flex flex-col gap-6">
+        <!-- Título e Descrição -->
+        <header class="text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">Resumidor de Notícias</h1>
+            <p class="text-sm sm:text-base text-gray-600">Busque notícias e obtenha resumos gerados por IA.</p>
+        </header>
+
+        <!-- Seção de Entrada -->
+        <section class="flex flex-col sm:flex-row gap-4 items-end">
+            <div class="flex-1 w-full">
+                <label for="apiKey" class="block text-sm font-medium text-gray-700">Chave da API da GNews</label>
+                <input type="text" id="apiKey" placeholder="Insira sua chave de API" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 transition-all duration-200">
+            </div>
+            <button id="fetchButton" class="w-full sm:w-auto px-6 py-2 bg-indigo-600 text-white font-medium rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200 transform active:scale-95">
+                Buscar e Resumir Notícias
+            </button>
+        </section>
+
+        <!-- Seção de Carregamento e Notificações -->
+        <div id="statusMessage" class="hidden text-center text-sm font-medium p-3 rounded-lg"></div>
+
+        <!-- Conteúdo dos Resumos -->
+        <section id="summariesContainer" class="flex flex-col gap-6"></section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
